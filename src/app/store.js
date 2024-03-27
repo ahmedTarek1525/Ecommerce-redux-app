@@ -3,6 +3,6 @@ import sliderReducer from "../features/slices/sliderSlice";
 
 export const store = configureStore({
     reducer: {
-        slder: sliderReducer,
+        slider: sliderReducer,
     },
 })
