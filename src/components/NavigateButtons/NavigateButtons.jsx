@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 function NavigateButtons() {
 
-    const buttons = ["T-shirts" , "Hoodies" , "Jeans" ,"Dresses" , "Suits" , "Shoes" , "Jackets" , "bags"];
+    const buttons = ["T-Shirts" , "Hoodies" , "Jeans" ,"Dresses" , "Suits" , "Shoes" , "Jackets" , "Bags"];
 
     const dispatch = useDispatch();
 
