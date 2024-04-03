@@ -3,6 +3,7 @@ import './App.css';
 import Main from './components/Main/Main';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FilteredProducts from './components/FilteredProducts/FilteredProducts';
+import SingleProducts from './components/FilteredProducts/SingleProducts';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main></Main>}></Route>
           <Route path="/filteredProducts/:type" element={<FilteredProducts></FilteredProducts>}></Route>
+          <Route path="/filteredProducts/:type/:id" element={<SingleProducts></SingleProducts>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
