@@ -4,8 +4,11 @@ import Main from './components/Main/Main';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FilteredProducts from './components/FilteredProducts/FilteredProducts';
 import SingleProducts from './components/FilteredProducts/SingleProducts';
+import { useSelector } from 'react-redux';
+
 
 function App() {
+  
   return (
     <div className="App">
       <BrowserRouter>
