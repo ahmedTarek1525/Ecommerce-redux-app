@@ -18,7 +18,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={authUser ? <Main></Main> : <Login></Login> }></Route>
-          <Route path='/login' element={<Login></Login>}></Route>
           <Route path="/filteredProducts/:type" element={<FilteredProducts></FilteredProducts>}></Route>
           <Route path="/filteredProducts/:type/:id" element={<SingleProducts></SingleProducts>}></Route>
         </Routes>
