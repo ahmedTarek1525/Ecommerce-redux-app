@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Card,
     CardHeader,
@@ -6,15 +6,24 @@ import {
     CardFooter,
     Typography,
     Input,
-    Checkbox,
     Button,
   } from "@material-tailwind/react";
-  import { Button } from "@material-tailwind/react";
-  import { Input } from "@material-tailwind/react";
 
-function Login() {
+const Login = () => {
+    const intitalState = {
+        name: "",
+        password: "",
+        image: "",
+    };
+
+    const {values , setValues} = useState(intitalState);
+    const onChange = (event) => {
+        const {name , value} = event.target;
+        setValues({...values , [name]: value});
+    };
+
   return (
-    <div>
+    <div className="grid grid-cols-1 items-center justify-items-center h-screen">
        <Card className="w-96">
       <CardHeader
         variant="gradient"
@@ -26,8 +35,9 @@ function Login() {
         </Typography>
       </CardHeader>
       <CardBody className="flex flex-col gap-4">
-        <Input label="Email" size="lg" />
-        <Input label="Password" size="lg" />
+        <Input label="Email" size="lg" type="text" name="name" value={values.name} onChange={onChange} />
+        <Input label="Password" size="lg" type="password" name="password" value={values.password} onChange={onChange} />
+        <Input label="Image URL address" size="lg" type="text" name="image" value={values.image} onChange={onChange} />
         <div className="-ml-2.5">
         </div>
       </CardBody>
@@ -36,16 +46,7 @@ function Login() {
           Sign In
         </Button>
         <Typography variant="small" className="mt-6 flex justify-center">
-          Don&apos;t have an account?
-          <Typography
-            as="a"
-            href="#signup"
-            variant="small"
-            color="blue-gray"
-            className="ml-1 font-bold"
-          >
-            Sign up
-          </Typography>
+          image is Optional
         </Typography>
       </CardFooter>
     </Card>
