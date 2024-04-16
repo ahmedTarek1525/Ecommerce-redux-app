@@ -1,35 +1,33 @@
-import React from 'react';
+import React from "react";
 import {
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Typography,
-    Button,
-  } from "@material-tailwind/react";
-import { UseDispatch, useDispatch } from 'react-redux';
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+} from "@material-tailwind/react";
+import { useDispatch } from "react-redux";
 import { singleProduct } from "../../features/slices/productsSlice";
 import { Link, useParams } from "react-router-dom";
 
-const ProductCard = ({id , name , text , img , price , colors}) => {
-    const dispatch = useDispatch();
-    const {type} = useParams();
+const ProductCard = ({ id, name, text, img, price, colors }) => {
+  const dispatch = useDispatch();
+  const { type } = useParams();
+
   return (
-  <Link to={`/filteredProducts/${type}/` + id}>
-    <Card className="w-96" onClick={() => dispatch(singleProduct(id))}>
-      <CardHeader color="blue" className="relative h-96">
-        <img src={img} alt="img-blur-shadow" className="h-full w-full"/>
-      </CardHeader>
-      <CardBody className="text-center">
-        <Typography variant="h5" className="mb-2">
+    <Link to={`/filteredProducts/${type}/` + id}>
+      <Card className="w-96" onClick={() => dispatch(singleProduct(id))}>
+        <CardHeader color="blue" className="relative h-96">
+          <img src={img} alt="img-blur-shadow" className="h-full w-full" />
+        </CardHeader>
+        <CardBody className="text-center">
+          <Typography variant="h5" className="mb-2">
             {name}
-        </Typography>
-        <Typography>
-            {text}
-        </Typography>
-      </CardBody>
-      <CardFooter divider className="flex items-center justify-between py-3">
-      <Typography variant="small">{price}$</Typography>
+          </Typography>
+          <Typography>{text}</Typography>
+        </CardBody>
+        <CardFooter divider className="flex items-center justify-between py-3">
+          <Typography variant="small">{price}$</Typography>
           <Typography variant="small" color="gray" className="flex gap-1">
             {colors?.map((color, index) => {
               return (
@@ -43,8 +41,8 @@ const ProductCard = ({id , name , text , img , price , colors}) => {
           </Typography>
         </CardFooter>
       </Card>
-  </Link>
-  )
-}
+    </Link>
+  );
+};
 
-export default ProductCard
+export default ProductCard;
